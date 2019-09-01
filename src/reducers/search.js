@@ -1,4 +1,4 @@
-import { searchRequest, searchSuccess, searchFailure } from './../actions/search';
+import { SEARCH_REQUEST, SEARCH_SUCCESS, SEARCH_FAILURE } from './../actions/search';
 
 const initialState = {
   shows: [],
@@ -6,26 +6,26 @@ const initialState = {
   error: null
 };
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case searchRequest.toString():
+export default ( state = initialState, {type, payload} ) => {
+  switch (type) {
+    case SEARCH_REQUEST:
       return {
         ...state,
         shows: [],
         isLoading: true
       };
-    case searchSuccess.toString():
+    case SEARCH_SUCCESS:
       return {
         ...state,
-        shows: action.payload,
+        shows: payload,
         isLoading: false
       };
-    case searchFailure.toString():
+    case SEARCH_FAILURE:
       return {
         ...state,
         shows: [],
         isLoading: false,
-        error: action.payload
+        error: payload
       };
 
     default:

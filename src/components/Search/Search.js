@@ -31,7 +31,7 @@ class Search extends Component {
             <Fragment>
                 <div className={ styles.previewList }>
                     <input
-                        className={ styles.input }
+                        className={ styles.input + ' t-input' }
                         type="text"
                         placeholder="Название сериала"
                         onChange={ this.onChange }
@@ -48,7 +48,7 @@ class Search extends Component {
 
                     { isLoading && <div>Идет поиск</div> }
                 </div>
-                <div className={ styles.searchPanel }>
+                <div className={ styles.searchPanel + ' t-search-result' }>
                     { 
                         shows.map(({ image, name, id, summary }) => (
                             <ShowPreview
