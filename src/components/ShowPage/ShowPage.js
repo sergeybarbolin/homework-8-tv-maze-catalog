@@ -17,7 +17,7 @@ const Person = ({ person: {name, image} }) => {
         <div className="t-person">
             <p>{name}</p>
             {
-                image ? <img src={image.medium} alt={name} className={styles.img}/> : ''
+                image && <img src={image.medium} alt={name} className={styles.img}/>
             }
         </div>
     )
